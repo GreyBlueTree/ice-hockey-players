@@ -1,6 +1,7 @@
 enum SortBy {
   goals,
   assists,
+  points;
 }
 
 class Player {
@@ -19,4 +20,8 @@ class Player {
   String get name {
     return "$firstName $lastName";
   }
+}
+
+extension PlayerExt on Player {
+  int get points => goals + assists;
 }
